@@ -204,14 +204,14 @@
         media_layer {
             display-name = "Media";
 // -----------------------------------------------------------------------------------
-// |  ___ | MUT | BDE | VDN | VUP | BIN |       | ___ | BMR | ___ | ___ | ___ | ___  |
-// |  STP | PLP | PRV | RWD | FFW | NXT |       | BCK | SCH | HOM | FWD | REF | STP  |
-// |  ___ | ___ | ___ | ___ | ___ | ___ |       | ___ | COM | CAL | MAI | ___ | ___  |
+// |  ___ | ___ | VDN | ___ | MUT | VUP |       | BDE | ___ | ___ | BIN | ___ | ___  |
+// |  ___ | ___ | PRV | STP | PLP | NXT |       | BCK | REF | STP | FWD | SCH | BMR  |
+// |  ___ | ___ | RWD | ___ | ___ | FFW |       | HOM | COM | CAL | MAL | ___ | ___  |
 //                    | ___ | ___ | ___ |       | ___ | ___ | ___ |
             bindings = <
-&trans                 &kp C_MUTE             &kp C_BRIGHTNESS_DEC   &kp C_VOLUME_DOWN      &kp C_VOLUME_UP        &kp C_BRIGHTNESS_INC             &trans                 &kp C_AC_BOOKMARKS     &trans                 &trans                 &trans                 &trans
-&kp C_STOP             &kp C_PLAY_PAUSE       &kp C_PREVIOUS         &kp C_REWIND           &kp C_FAST_FORWARD     &kp C_NEXT                       &kp C_AC_BACK          &kp C_AC_SEARCH        &kp C_AC_HOME          &kp C_AC_FORWARD       &kp C_AC_REFRESH       &kp C_AC_STOP
-&trans                 &trans                 &trans                 &trans                 &trans                 &trans                           &trans                 &kp C_AL_MY_COMPUTER   &kp C_AL_CALCULATOR    &kp C_AL_EMAIL         &trans                 &trans
+&trans                 &trans                 &kp C_VOLUME_DOWN      &trans                 &kp C_MUTE             &kp C_VOLUME_UP                  &kp C_BRIGHTNESS_DEC   &trans                 &trans                 &kp C_BRIGHTNESS_INC   &trans                 &trans
+&trans                 &trans                 &kp C_PREVIOUS         &kp C_STOP             &kp C_PLAY_PAUSE       &kp C_NEXT                       &kp C_AC_BACK          &kp C_AC_REFRESH       &kp C_AC_STOP          &kp C_AC_FORWARD       &kp C_AC_SEARCH        &kp C_AC_BOOKMARKS
+&trans                 &trans                 &kp C_REWIND           &trans                 &trans                 &kp C_FAST_FORWARD               &kp C_AC_HOME          &kp C_AL_MY_COMPUTER   &kp C_AL_CALCULATOR    &kp C_AL_EMAIL         &trans                 &trans
                                                                      &trans                 &trans                 &trans                           &trans                 &trans                 &trans
             >;
         };
