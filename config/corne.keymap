@@ -47,7 +47,7 @@
 &kp TAB                &kp Q                  &kp W                  &kp E                  &kp R                  &kp T                            &kp Y                  &kp U                  &kp I                  &kp O                  &kp P                  &kp MINUS
 &lt_cw PLAIN 0         &hrm_l LGUI A          &hrm_l LALT S          &hrm_l LCTRL D         &hrm_li LSHFT F        &kp G                            &kp H                  &hrm_ri RSHFT J        &hrm_r RCTRL K         &hrm_r RALT L          &hrm_r RGUI SEMICOLON  &c_lt PLAIN SINGLE_QUOTE
 &sk_qr LEFT_SHIFT      &kp Z                  &kp X                  &kp C                  &kp V                  &kp B                            &kp N                  &kp M                  &kp COMMA              &kp PERIOD             &kp SLASH              &sk_qr RIGHT_CONTROL
-                                                                     &thumb NAV ESCAPE      &thumb NUMBER DELETE   &thumb ALTER SPACE               &thumb ALTER RETURN    &thumb SYM BACKSPACE   &thumb MEDIA ESCAPE
+                                                                     &thumb_nav_tap 0 ESC   &thumb NUMBER DELETE   &thumb ALTER SPACE               &thumb ALTER RETURN    &thumb SYM BACKSPACE   &thumb MEDIA ESCAPE
             >;
         };
 
@@ -189,12 +189,12 @@
         navigation_layer {
             display-name = "Nav";
 // -----------------------------------------------------------------------------------
-// |  A → | ___ | ___ | ___ | ___ | ___ |       | HOM | PDN | PUP | END | ___ | CMN  |
+// |  A-→ | ___ | ___ | ___ | ___ | ___ |       | HOM | PDN | PUP | END | ___ | CMN  |
 // |  C → | ___ | T ← | ___ | ___ | T → |       |  ←  |  ↓  |  ↑  |  →  | GUI | ___  |
 // |  G → | ___ | ___ | ___ | ___ | ___ |       | W ← | W ↓ | W ↑ | W → | ___ | ___  |
 //                    | ___ | ___ | ___ |       | ___ | ___ | ___ |
             bindings = <
-&kp RA(TAB)            &trans                 &trans                 &trans                 &trans                 &trans                           &kp HOME               &kp PAGE_DOWN          &kp PAGE_UP            &kp END                &trans                 &kp K_CONTEXT_MENU
+&nav_tab               &trans                 &trans                 &trans                 &trans                 &trans                           &kp HOME               &kp PAGE_DOWN          &kp PAGE_UP            &kp END                &trans                 &kp K_CONTEXT_MENU
 &kp RC(TAB)            &trans                 &tt 0 LC(PAGE_UP)      &trans                 &trans                 &tt 0 LC(PAGE_DOWN)              &kp LEFT               &kp DOWN               &kp UP                 &kp RIGHT              &kp RIGHT_GUI          &trans
 &kp RG(TAB)            &trans                 &trans                 &trans                 &trans                 &trans                           &kp LC(LEFT)           &kp LC(END)            &kp LC(HOME)           &kp LC(RIGHT)          &trans                 &trans
                                                                      &trans                 &trans                 &trans                           &trans                 &trans                 &trans

@@ -49,5 +49,31 @@
         /* Thumb */
 
         thumb: THUMB(thumb)
+
+        base_nav: ZMK_MACRO(base_nav,
+            bindings
+                = <&macro_press &mo NAV>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp RALT>
+                , <&macro_release &mo NAV>;
+        )
+
+        thumb_nav_tap: HOLD_TAP(thumb_nav_tap, <&base_nav>, <&kp>,
+            quick-tap-ms = <TAP_HOLD_MS>;
+        )
+
+        /* Other */
+
+        /* TAB for Nav layer */
+
+        alt_tab_latch: ZMK_MACRO(alt_tab_latch,
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp TAB>;
+        )
+
+        nav_tab: MOD_MORPH(nav_tab, <&alt_tab_latch>, <&kp TAB>, <(MOD_RALT)>,
+            keep-mods = <(MOD_RALT)>;
+        )
     };
 };
