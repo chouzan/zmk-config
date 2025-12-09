@@ -14,6 +14,7 @@
         mm_tilde_arrows: MOD_MORPH(mm_tilde_arrows, <&m_tilde_arrow_r>, <&m_tilde_arrow_l>, MACRO_MORPH_MODS)
         mm_pipes: MOD_MORPH(mm_pipes, <&m_pipe_r>, <&m_pipe_l>, MACRO_MORPH_MODS)
         mm_chevrons: MOD_MORPH(mm_chevrons, <&m_ex_bitstring>, <&m_chevrons>, MACRO_MORPH_MODS)
+        mm_backticks: MOD_MORPH(mm_backticks, <&m_backticks>, <&m_triple_backticks>, MACRO_MORPH_MODS)
         mm_ex_specs: MOD_MORPH(mm_elixir_specs, <&m_ex_spec>, <&m_ex_type>, MACRO_MORPH_MODS)
 
         /* Custom sticky key */

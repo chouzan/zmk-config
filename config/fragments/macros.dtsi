@@ -18,6 +18,14 @@
             bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT>;
         )
 
+        m_backticks: ZMK_MACRO(macro_backticks,
+            bindings = <&kp GRAVE &kp GRAVE &kp LEFT>;
+        )
+
+        m_triple_backticks: ZMK_MACRO(macro_triple_backticks,
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+        )
+
         m_arrow_r: ZMK_MACRO(macro_arrow_right,
             bindings = <&kp MINUS &kp GREATER_THAN &kp SPACE>;
         )
