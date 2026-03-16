@@ -1,80 +1,40 @@
 / {
     behaviors {
-        /* Custom hold-tap */
+        // -- Custom hold-tap --------------------------------------------------
 
-        tt: HOLD_TAP(trans_tap, <&trans>, <&kp>)
+        tt:    HOLD_TAP(trans_tap,    <&trans>, <&kp>)
 
-        c_lt: HOLD_TAP(custom_lt, <&mo>, <&kp>)
-        lt_cw: HOLD_TAP(lt_caps_word, <&mo>, <&caps_word>)
+        c_lt:  HOLD_TAP(custom_lt,    <&mo>,    <&kp>)
+        lt_cw: HOLD_TAP(lt_caps_word, <&mo>,    <&caps_word>)
 
-        /* Custom mod-morph */
+        // -- Custom mod-morph -------------------------------------------------
 
-        mm_arrows: MOD_MORPH(mm_arrows, <&m_arrow_r>, <&m_arrow_l>, MACRO_MORPH_MODS)
-        mm_fat_arrows: MOD_MORPH(mm_fat_arrows, <&m_fat_arrow_r>, <&m_fat_arrow_l>, MACRO_MORPH_MODS)
-        mm_tilde_arrows: MOD_MORPH(mm_tilde_arrows, <&m_tilde_arrow_r>, <&m_tilde_arrow_l>, MACRO_MORPH_MODS)
-        mm_pipes: MOD_MORPH(mm_pipes, <&m_pipe_r>, <&m_pipe_l>, MACRO_MORPH_MODS)
-        mm_chevrons: MOD_MORPH(mm_chevrons, <&m_ex_bitstring>, <&m_chevrons>, MACRO_MORPH_MODS)
-        mm_backticks: MOD_MORPH(mm_backticks, <&m_backticks>, <&m_triple_backticks>, MACRO_MORPH_MODS)
-        mm_ex_specs: MOD_MORPH(mm_elixir_specs, <&m_ex_spec>, <&m_ex_type>, MACRO_MORPH_MODS)
+        mm_arrows:       SHIFT_MORPH(mm_arrows,       <&m_arrow_r>,       <&m_arrow_l>)
+        mm_fat_arrows:   SHIFT_MORPH(mm_fat_arrows,   <&m_fat_arrow_r>,   <&m_fat_arrow_l>)
+        mm_tilde_arrows: SHIFT_MORPH(mm_tilde_arrows, <&m_tilde_arrow_r>, <&m_tilde_arrow_l>)
+        mm_pipes:        SHIFT_MORPH(mm_pipes,        <&m_pipe_r>,        <&m_pipe_l>)
+        mm_chevrons:     SHIFT_MORPH(mm_chevrons,     <&m_ex_bitstring>,  <&m_chevrons>)
+        mm_backticks:    SHIFT_MORPH(mm_backticks,    <&m_backticks>,     <&m_triple_backticks>)
+        mm_ex_specs:     SHIFT_MORPH(mm_elixir_specs, <&m_ex_spec>,       <&m_ex_type>)
 
-        /* Custom sticky key */
+        // -- Custom sticky key ------------------------------------------------
 
         sk_qr: STICKY_KEY_QUICK_RELEASE(sk_quick_release, <&kp>)
 
-        /* Home row mod */
+        // -- Home row mod -----------------------------------------------------
 
-        hrm_l: HOME_ROW_MOD(hrm_left,
-            tapping-term-ms = <HOLD_MS>;
-            require-prior-idle-ms = <PRIOR_MS>;
-            hold-trigger-key-positions = <RIGHT_HAND>;
-        )
+        hrm_ri: HRM_INDEX(hrm_right_index,   LEFT_HAND)
+        hrm_rm: HRM_MIDDLE(hrm_right_middle, LEFT_HAND)
+        hrm_rr: HRM_RING(hrm_right_ring,     LEFT_HAND)
+        hrm_rl: HRM_LITTLE(hrm_right_little, LEFT_HAND)
 
-        hrm_li: HOME_ROW_MOD(hrm_left_index,
-            tapping-term-ms = <INDEX_HOLD_MS>;
-            require-prior-idle-ms = <INDEX_PRIOR_MS>;
-            hold-trigger-key-positions = <RIGHT_HAND>;
-        )
+        hrm_li: HRM_INDEX(hrm_left_index,    RIGHT_HAND)
+        hrm_lm: HRM_MIDDLE(hrm_left_middle,  RIGHT_HAND)
+        hrm_lr: HRM_RING(hrm_left_ring,      RIGHT_HAND)
+        hrm_ll: HRM_LITTLE(hrm_left_little,  RIGHT_HAND)
 
-        hrm_r: HOME_ROW_MOD(hrm_right,
-            tapping-term-ms = <HOLD_MS>;
-            require-prior-idle-ms = <PRIOR_MS>;
-            hold-trigger-key-positions = <LEFT_HAND>;
-        )
-
-        hrm_ri: HOME_ROW_MOD(hrm_right_index,
-            tapping-term-ms = <INDEX_HOLD_MS>;
-            require-prior-idle-ms = <INDEX_PRIOR_MS>;
-            hold-trigger-key-positions = <LEFT_HAND>;
-        )
-
-        /* Thumb */
+        // -- Thumb ------------------------------------------------------------
 
         thumb: THUMB(thumb)
-
-        base_nav: ZMK_MACRO(base_nav,
-            bindings
-                = <&macro_press &mo NAV>
-                , <&macro_pause_for_release>
-                , <&macro_release &kp RALT>
-                , <&macro_release &mo NAV>;
-        )
-
-        thumb_nav_tap: HOLD_TAP(thumb_nav_tap, <&base_nav>, <&kp>,
-            quick-tap-ms = <TAP_HOLD_MS>;
-        )
-
-        /* Other */
-
-        /* TAB for Nav layer */
-
-        alt_tab_latch: ZMK_MACRO(alt_tab_latch,
-            bindings
-                = <&macro_press &kp RALT>
-                , <&macro_tap &kp TAB>;
-        )
-
-        nav_tab: MOD_MORPH(nav_tab, <&alt_tab_latch>, <&kp TAB>, <(MOD_RALT)>,
-            keep-mods = <(MOD_RALT)>;
-        )
     };
 };

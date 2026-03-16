@@ -1,11 +1,16 @@
 / {
     ZMK_CONDITIONAL_LAYERS(
+        // -- Bases ------------------------------------------------------------
+
         CONDITIONAL_LAYER(plain_layer, <PLAIN>, <BASE_PLAIN>)
         CONDITIONAL_LAYER(alter_layer, <ALTER>, <BASE_ALTER>)
         CONDITIONAL_LAYER(game_layer, <GAME>, <BASE_PLAIN>)
         CONDITIONAL_LAYER(number_layer, <NUMBER>, <BASE_ALTER>)
         CONDITIONAL_LAYER(symbol_layer, <SYMBOL>, <BASE_ALTER>)
         CONDITIONAL_LAYER(navigation_layer, <NAVIGATION>, <BASE_ALTER>)
+
+        // -- Combinations -----------------------------------------------------
+
         CONDITIONAL_LAYER(numpad_layer, <ALTER NUMBER>, <NUMPAD>)
         CONDITIONAL_LAYER(macro_layer, <ALTER SYMBOL>, <MACRO>)
         CONDITIONAL_LAYER(sysutils_layer, <NUMBER SYMBOL>, <SYSUTILS>)

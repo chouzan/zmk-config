@@ -1,64 +1,30 @@
 / {
     macros {
-        /* Symbols */
+        // -- Symbols ----------------------------------------------------------
 
-        m_parens: ZMK_MACRO(macro_parentheses,
-            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
-        )
-
-        m_brackets: ZMK_MACRO(macro_brackets,
-            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
-        )
-
-        m_braces: ZMK_MACRO(macro_braces,
-            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
-        )
-
-        m_chevrons: ZMK_MACRO(macro_angle_brackets,
-            bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT>;
-        )
-
-        m_backticks: ZMK_MACRO(macro_backticks,
-            bindings = <&kp GRAVE &kp GRAVE &kp LEFT>;
-        )
+        m_parens:    MACRO_BRACKET_PAIR(macro_parentheses,    LEFT_PARENTHESIS, RIGHT_PARENTHESIS)
+        m_brackets:  MACRO_BRACKET_PAIR(macro_brackets,       LEFT_BRACKET,     RIGHT_BRACKET)
+        m_braces:    MACRO_BRACKET_PAIR(macro_braces,         LEFT_BRACE,       RIGHT_BRACE)
+        m_chevrons:  MACRO_BRACKET_PAIR(macro_angle_brackets, LESS_THAN,        GREATER_THAN)
+        m_backticks: MACRO_BRACKET_PAIR(macro_backticks,      GRAVE,            GRAVE)
 
         m_triple_backticks: ZMK_MACRO(macro_triple_backticks,
             bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
         )
 
-        m_arrow_r: ZMK_MACRO(macro_arrow_right,
-            bindings = <&kp MINUS &kp GREATER_THAN &kp SPACE>;
-        )
+        m_arrow_r:       MACRO_ARROW_R(macro_arrow_right,       MINUS)
+        m_arrow_l:       MACRO_ARROW_L(macro_arrow_left,        MINUS)
 
-        m_arrow_l: ZMK_MACRO(macro_arrow_left,
-            bindings = <&kp LESS_THAN &kp MINUS &kp SPACE>;
-        )
+        m_fat_arrow_r:   MACRO_ARROW_R(macro_fat_arrow_right,   EQUAL)
+        m_fat_arrow_l:   MACRO_ARROW_L(macro_fat_arrow_left,    EQUAL)
 
-        m_fat_arrow_r: ZMK_MACRO(macro_fat_arrow_right,
-            bindings = <&kp EQUAL &kp GREATER_THAN &kp SPACE>;
-        )
+        m_tilde_arrow_r: MACRO_ARROW_R(macro_tilde_arrow_right, TILDE)
+        m_tilde_arrow_l: MACRO_ARROW_L(macro_tilde_arrow_left,  TILDE)
 
-        m_fat_arrow_l: ZMK_MACRO(macro_fat_arrow_left,
-            bindings = <&kp LESS_THAN &kp EQUAL &kp SPACE>;
-        )
+        m_pipe_r:        MACRO_ARROW_R(macro_pipe_right,        PIPE)
+        m_pipe_l:        MACRO_ARROW_L(macro_pipe_left,         PIPE)
 
-        m_tilde_arrow_r: ZMK_MACRO(macro_tilde_arrow_right,
-            bindings = <&kp TILDE &kp GREATER_THAN &kp SPACE>;
-        )
-
-        m_tilde_arrow_l: ZMK_MACRO(macro_tilde_arrow_left,
-            bindings = <&kp LESS_THAN &kp TILDE &kp SPACE>;
-        )
-
-        m_pipe_r: ZMK_MACRO(macro_pipe_right,
-            bindings = <&kp PIPE &kp GREATER_THAN &kp SPACE>;
-        )
-
-        m_pipe_l: ZMK_MACRO(macro_pipe_left,
-            bindings = <&kp LESS_THAN &kp PIPE &kp SPACE>;
-        )
-
-        /* Elixir */
+        // -- Elixir -----------------------------------------------------------
 
         m_ex_bitstring: ZMK_MACRO(macro_elixir_bitstring,
             bindings = <&kp LESS_THAN &kp LESS_THAN &kp GREATER_THAN &kp GREATER_THAN &kp LEFT &kp LEFT>;
@@ -88,18 +54,14 @@
             bindings = <&kp DOUBLE_QUOTES &kp HASH &kp LEFT_BRACE &kp RIGHT_BRACE &kp DOUBLE_QUOTES &kp LEFT &kp LEFT>;
         )
 
-        /* Game */
+        // -- Game -------------------------------------------------------------
 
-        m_tap_gchat_o: macro_tap_game_chat_open {
-          compatible = "zmk,behavior-macro-one-param";
-          #binding-cells = <1>;
-          bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER &to GAME_CHAT>;
-        };
+        m_tap_gchat_o: ZMK_MACRO_ONE_PARAM(macro_tap_game_chat_open,
+            bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER &to GAME_CHAT>;
+        )
 
-        m_tap_gchat_c: macro_tap_game_chat_close {
-          compatible = "zmk,behavior-macro-one-param";
-          #binding-cells = <1>;
-          bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER &to GAME>;
-        };
+        m_tap_gchat_c: ZMK_MACRO_ONE_PARAM(macro_tap_game_chat_close,
+            bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER &to GAME>;
+        )
     };
 };

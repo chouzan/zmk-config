@@ -1,27 +1,27 @@
 #ifndef ZMKCFG_HELPERS_DTSI
 #define ZMKCFG_HELPERS_DTSI
 
-/* ZMK helpers */
+// -- ZMK helpers --------------------------------------------------------------
 
 #define ZMK_HOLD_TAP(name, ...) \
-	name { \
+    name { \
         compatible = "zmk,behavior-hold-tap"; \
         #binding-cells = <2>; \
-		__VA_ARGS__ \
-	};
+        __VA_ARGS__ \
+    };
 
 #define ZMK_MOD_MORPH(name, ...) \
     name { \
         compatible = "zmk,behavior-mod-morph"; \
         #binding-cells = <0>; \
-		__VA_ARGS__ \
+        __VA_ARGS__ \
     };
 
 #define ZMK_STICKY_KEY(name, ...) \
     name { \
         compatible = "zmk,behavior-sticky-key"; \
         #binding-cells = <1>; \
-		__VA_ARGS__ \
+        __VA_ARGS__ \
     };
 
 #define ZMK_COMBO(name, ...) \
@@ -46,7 +46,32 @@
         __VA_ARGS__ \
     };
 
-/* Custom helpers */
+#define ZMK_MACRO_ONE_PARAM(name, ...) \
+    name { \
+        compatible = "zmk,behavior-macro-one-param"; \
+        #binding-cells = <1>; \
+        __VA_ARGS__ \
+    };
+
+#define ZMK_KEYMAPS(...) \
+    keymap { \
+        compatible = "zmk,keymap"; \
+        __VA_ARGS__ \
+    };
+
+#define ZMK_LAYER(layer_name, display_name, bindings_value) \
+    layer_name { \
+        display-name = display_name; \
+        bindings = bindings_value; \
+    };
+
+#define ZMK_RESERVED_LAYER(layer_name, display_name) \
+    layer_name { \
+        display-name = display_name; \
+        status = "reserved"; \
+    };
+
+// -- Custom helpers -----------------------------------------------------------
 
 #define HOLD_TAP(name, HOLD, TAP, ...) \
     ZMK_HOLD_TAP(name, \
@@ -61,13 +86,32 @@
         bindings = <&kp>, <&kp>; \
         flavor = "balanced"; \
         hold-trigger-on-release; \
-        quick-tap-ms = <TAP_HOLD_MS>; \
         __VA_ARGS__ \
     )
 
+#define HRM(name, HOLD, PRIOR_IDLE, QUICK_TAP, ENABLED_SIDE) \
+    HOME_ROW_MOD(name, \
+        tapping-term-ms = <HOLD>; \
+        require-prior-idle-ms = <PRIOR_IDLE>; \
+        quick-tap-ms = <QUICK_TAP>; \
+        hold-trigger-key-positions = <ENABLED_SIDE>; \
+    )
+
+#define HRM_INDEX(name, ENABLED_SIDE) \
+    HRM(name, INDEX_HOLD_MS, INDEX_PRIOR_IDLE_MS, INDEX_QUICK_TAP_MS, ENABLED_SIDE)
+
+#define HRM_MIDDLE(name, ENABLED_SIDE) \
+    HRM(name, MIDDLE_HOLD_MS, MIDDLE_PRIOR_IDLE_MS, MIDDLE_QUICK_TAP_MS, ENABLED_SIDE)
+
+#define HRM_RING(name, ENABLED_SIDE) \
+    HRM(name, RING_HOLD_MS, RING_PRIOR_IDLE_MS, RING_QUICK_TAP_MS, ENABLED_SIDE)
+
+#define HRM_LITTLE(name, ENABLED_SIDE) \
+    HRM(name, LITTLE_HOLD_MS, LITTLE_PRIOR_IDLE_MS, LITTLE_QUICK_TAP_MS, ENABLED_SIDE)
+
 #define THUMB(name) \
     HOLD_TAP(name, <&mo>, <&kp>, \
-        quick-tap-ms = <TAP_HOLD_MS>; \
+        quick-tap-ms = <QUICK_TAP_MS>; \
     )
 
 #define MOD_MORPH(name, TAP, MORPHED_TAP, MODS, ...) \
@@ -77,10 +121,13 @@
         __VA_ARGS__ \
     )
 
+#define SHIFT_MORPH(name, TAP, MORPHED_TAP) \
+    MOD_MORPH(name, TAP, MORPHED_TAP, <(MOD_LSFT | MOD_RSFT)>)
+
 #define STICKY_KEY(name, TAP, ...) \
     ZMK_STICKY_KEY(name, \
         bindings = TAP; \
-        release-after-ms = <RELEASE_MS>; \
+        release-after-ms = <RELEASE_AFTER_MS>; \
         __VA_ARGS__ \
     )
 
@@ -93,8 +140,8 @@
     ZMK_COMBO(name, \
         key-positions = KEY_POSITIONS; \
         bindings = DISPATCH; \
-        timeout-ms = <COMBO_TAP_MS>; \
-        require-prior-idle-ms = <PRIOR_MS>; \
+        timeout-ms = <COMBO_TIMEOUT_MS>; \
+        require-prior-idle-ms = <PRIOR_IDLE_MS>; \
     )
 
 #define CONDITIONAL_LAYER(name, IF_LAYERS, THEN_LAYERS) \
@@ -103,5 +150,20 @@
         then-layer = THEN_LAYERS; \
     )
 
-/* ZMKCFG_HELPERS_DTSI */
+#define MACRO_BRACKET_PAIR(name, OPEN_KEY, CLOSE_KEY) \
+    ZMK_MACRO(name, \
+        bindings = <&kp OPEN_KEY &kp CLOSE_KEY &kp LEFT>; \
+    )
+
+#define MACRO_ARROW_R(name, SYMBOL_KEY) \
+    ZMK_MACRO(name, \
+        bindings = <&kp SYMBOL_KEY &kp GREATER_THAN &kp SPACE>; \
+    )
+
+#define MACRO_ARROW_L(name, SYMBOL_KEY) \
+    ZMK_MACRO(name, \
+        bindings = <&kp LESS_THAN &kp SYMBOL_KEY &kp SPACE>; \
+    )
+
+// ZMKCFG_HELPERS_DTSI
 #endif
