@@ -201,6 +201,18 @@
                                                                                        &trans                   &trans                   &trans                          &trans                   &trans                   &trans
         >)
 
+        // -- OS Navigation (direction) layer ------------------------------------------------
+        // |  ___ | ___ | ___ | ___ | ___ | ___ |       | ___ | ___ | ___ | ___ | ___ | ___  |
+        // |  ___ | ___ | ___ | ___ | ___ | ___ |       |  ←  |  ↓  |  ↑  |  →  | ___ | ___  |
+        // |  ___ | ___ | ___ | ___ | ___ | ___ |       | ___ | ___ | ___ | ___ | ___ | ___  |
+        //                    | ___ | ___ | ___ |       | ___ | ___ | ___ |
+        ZMK_LAYER(os_navigation_layer, "OS Nav", <
+            &trans                   &trans                   &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &trans                   &trans
+            &trans                   &trans                   &trans                   &trans                   &trans                   &trans                          &kp LG(LEFT)             &kp LG(DOWN)             &kp LG(UP)               &kp LG(RIGHT)            &trans                   &trans
+            &trans                   &trans                   &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &trans                   &trans
+                                                                                       &trans                   &trans                   &trans                          &trans                   &trans                   &trans
+        >)
+
         // -- System Utils layer -------------------------------------------------------------
         // |  ___ | ___ | ___ | ___ | ___ | ___ |       | F12 | F7  | F8  | F9  | ___ | PBR  |
         // |  CAP | GUI | ALT | CTL | SFT | ___ |       | F11 | F4  | F5  | F6  | ___ | PSC  |

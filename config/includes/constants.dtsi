@@ -92,25 +92,26 @@
 
 // -- Layers -------------------------------------------------------------------
 
-#define BASE        0
-#define GAME_CHAT   1
-#define BASE_PLAIN  2
-#define BASE_ALTER  3
-#define PLAIN       4
-#define ALTER       5
-#define GAME        6
-#define GAME_UTILS  7
-#define NUMBER      8
-#define SYMBOL      9
-#define NAVIGATION 10
-#define MEDIA      11
-#define NUMPAD     12
-#define MACRO      13
-#define SYSUTILS   14
-#define SYSTEM     15
-#define BLUETOOTH  16
-#define KEYSYS     17
-#define SANDBOX    18
+#define BASE           0
+#define GAME_CHAT      1
+#define BASE_PLAIN     2
+#define BASE_ALTER     3
+#define PLAIN          4
+#define ALTER          5
+#define GAME           6
+#define GAME_UTILS     7
+#define NUMBER         8
+#define SYMBOL         9
+#define NAVIGATION    10
+#define MEDIA         11
+#define NUMPAD        12
+#define MACRO         13
+#define OS_NAVIGATION 14
+#define SYSUTILS      15
+#define SYSTEM        16
+#define BLUETOOTH     17
+#define KEYSYS        18
+#define SANDBOX       19
 
 // -- Timing -------------------------------------------------------------------
 
