@@ -132,9 +132,35 @@
 #define RING_HOLD_MS         HOLD_MS
 #define RING_QUICK_TAP_MS    QUICK_TAP_MS
 
+<<<<<<< Updated upstream
 #define LITTLE_PRIOR_IDLE_MS PRIOR_IDLE_MS
 #define LITTLE_HOLD_MS       HOLD_MS
 #define LITTLE_QUICK_TAP_MS  QUICK_TAP_MS
+=======
+/* Home row mod */
+
+#define LEFT_LITTLE  LEFT_GUI
+#define LEFT_RING    LEFT_ALT
+#define LEFT_MIDDLE  LEFT_CONTROL
+#define LEFT_INDEX   LEFT_SHIFT
+
+#define RIGHT_INDEX  RIGHT_SHIFT
+#define RIGHT_MIDDLE RIGHT_CONTROL
+#define RIGHT_RING   RIGHT_ALT
+#define RIGHT_LITTLE RIGHT_GUI
+
+#define LLITTLE      LEFT_LITTLE
+#define LRING        LEFT_RING
+#define LMIDDLE      LEFT_MIDDLE
+#define LINDEX       LEFT_INDEX
+
+#define RINDEX       RIGHT_INDEX
+#define RMIDDLE      RIGHT_MIDDLE
+#define RRING        RIGHT_RING
+#define RLITTLE      RIGHT_LITTLE
+
+/* Other */
+>>>>>>> Stashed changes
 
 // ZMKCFG_CONSTANTS_DTSI
 #endif
