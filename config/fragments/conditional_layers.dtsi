@@ -13,11 +13,11 @@
 
         CONDITIONAL_LAYER(numpad_layer, <ALTER NUMBER>, <NUMPAD>)
         CONDITIONAL_LAYER(macro_layer, <ALTER SYMBOL>, <MACRO>)
-        CONDITIONAL_LAYER(sysutils_layer, <NUMBER SYMBOL>, <SYSUTILS>)
+        CONDITIONAL_LAYER(system_utils_layer, <NUMBER SYMBOL>, <SYSTEM_UTILS>)
         CONDITIONAL_LAYER(system_layer, <NAVIGATION MEDIA>, <SYSTEM>)
-        CONDITIONAL_LAYER(bluetooth_layer, <ALTER SYSUTILS>, <BLUETOOTH>)
-        CONDITIONAL_LAYER(keysys_layer_left, <ALTER NUMBER NAVIGATION>, <KEYSYS>)
-        CONDITIONAL_LAYER(keysys_layer_right, <ALTER SYMBOL MEDIA>, <KEYSYS>)
+        CONDITIONAL_LAYER(bluetooth_layer, <ALTER SYSTEM_UTILS>, <BLUETOOTH>)
+        CONDITIONAL_LAYER(key_system_layer_left, <ALTER NUMBER NAVIGATION>, <KEY_SYSTEM>)
+        CONDITIONAL_LAYER(key_system_layer_right, <ALTER SYMBOL MEDIA>, <KEY_SYSTEM>)
         CONDITIONAL_LAYER(sandbox_layer, <NUMBER MEDIA>, <SANDBOX>)
     )
 };

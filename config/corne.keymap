@@ -209,7 +209,7 @@
         // |  CAP | GUI | ALT | CTL | SFT | ___ |       | F11 | F4  | F5  | F6  | ___ | PSC  |
         // |  ___ | ___ | ___ | ___ | ___ | ___ |       | F10 | F1  | F2  | F3  | ___ | SLC  |
         //                    | ___ | ___ | ___ |       | ___ | ___ | ___ |
-        ZMK_LAYER(sysutils_layer, "Sysutils", <
+        ZMK_LAYER(system_utils_layer, "Sysutils", <
             &trans                   &trans                   &trans                   &trans                   &trans                   &trans                          &kp F12                  &kp F7                   &kp F8                   &kp F9                   &trans                   &kp PAUSE_BREAK
             &kp CAPSLOCK             &kp LEFT_GUI             &kp LEFT_ALT             &kp LEFT_CONTROL         &kp LEFT_SHIFT           &trans                          &kp F11                  &kp F4                   &kp F5                   &kp F6                   &trans                   &kp PRINTSCREEN
             &trans                   &trans                   &trans                   &trans                   &trans                   &trans                          &kp F10                  &kp F1                   &kp F2                   &kp F3                   &trans                   &kp SCROLLLOCK
@@ -245,7 +245,7 @@
         // |  ULC | USB | GAM | PLN | BAS | ___ |       | ___ | BAS | PLN | GAM | USB | ULC  |
         // |  RES | BLE | ___ | ___ | ___ | ___ |       | ___ | ___ | ___ | ___ | BLE | RES  |
         //                    | ___ | ___ | ___ |       | ___ | ___ | ___ |
-        ZMK_LAYER(keysys_layer, "Keysys", <
+        ZMK_LAYER(key_system_layer, "Keysys", <
             &bootloader              &out OUT_NONE            &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &out OUT_NONE            &bootloader
             &studio_unlock           &out OUT_USB             &to GAME                 &to PLAIN                &to BASE                 &trans                          &trans                   &to BASE                 &to PLAIN                &to GAME                 &out OUT_USB             &studio_unlock
             &sys_reset               &out OUT_BLE             &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &out OUT_BLE             &sys_reset
