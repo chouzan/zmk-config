@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #include "includes/constants.dtsi"
 #include "includes/helpers.dtsi"
@@ -238,14 +239,14 @@
         >)
 
         // -- Keyboard System layer ----------------------------------------------------------
-        // |  BLD | ___ | ___ | ___ | ___ | ___ |       | ___ | ___ | ___ | ___ | ___ | BLD  |
-        // |  ULC | ___ | GAM | PLN | BAS | ___ |       | ___ | BAS | PLN | GAM | ___ | ULC  |
-        // |  RES | ___ | ___ | ___ | ___ | ___ |       | ___ | ___ | ___ | ___ | ___ | RES  |
+        // |  BLD | NON | ___ | ___ | ___ | ___ |       | ___ | ___ | ___ | ___ | NON | BLD  |
+        // |  ULC | USB | GAM | PLN | BAS | ___ |       | ___ | BAS | PLN | GAM | USB | ULC  |
+        // |  RES | BLE | ___ | ___ | ___ | ___ |       | ___ | ___ | ___ | ___ | BLE | RES  |
         //                    | ___ | ___ | ___ |       | ___ | ___ | ___ |
         ZMK_LAYER(keysys_layer, "Keysys", <
-            &bootloader              &trans                   &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &trans                   &bootloader
-            &studio_unlock           &trans                   &to GAME                 &to PLAIN                &to BASE                 &trans                          &trans                   &to BASE                 &to PLAIN                &to GAME                 &trans                   &studio_unlock
-            &sys_reset               &trans                   &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &trans                   &sys_reset
+            &bootloader              &out OUT_NONE            &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &out OUT_NONE            &bootloader
+            &studio_unlock           &out OUT_USB             &to GAME                 &to PLAIN                &to BASE                 &trans                          &trans                   &to BASE                 &to PLAIN                &to GAME                 &out OUT_USB             &studio_unlock
+            &sys_reset               &out OUT_BLE             &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &out OUT_BLE             &sys_reset
                                                                                        &trans                   &trans                   &trans                          &trans                   &trans                   &trans
         >)
 

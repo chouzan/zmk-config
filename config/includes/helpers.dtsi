@@ -46,6 +46,13 @@
         __VA_ARGS__ \
     };
 
+#define ZMK_MACRO_NO_PARAM(name, ...) \
+    name { \
+        compatible = "zmk,behavior-macro"; \
+        #binding-cells = <0>; \
+        __VA_ARGS__ \
+    };
+
 #define ZMK_MACRO_ONE_PARAM(name, ...) \
     name { \
         compatible = "zmk,behavior-macro-one-param"; \
@@ -151,17 +158,17 @@
     )
 
 #define MACRO_BRACKET_PAIR(name, OPEN_KEY, CLOSE_KEY) \
-    ZMK_MACRO(name, \
+    ZMK_MACRO_NO_PARAM(name, \
         bindings = <&kp OPEN_KEY &kp CLOSE_KEY &kp LEFT>; \
     )
 
 #define MACRO_ARROW_R(name, SYMBOL_KEY) \
-    ZMK_MACRO(name, \
+    ZMK_MACRO_NO_PARAM(name, \
         bindings = <&kp SYMBOL_KEY &kp GREATER_THAN &kp SPACE>; \
     )
 
 #define MACRO_ARROW_L(name, SYMBOL_KEY) \
-    ZMK_MACRO(name, \
+    ZMK_MACRO_NO_PARAM(name, \
         bindings = <&kp LESS_THAN &kp SYMBOL_KEY &kp SPACE>; \
     )
 
