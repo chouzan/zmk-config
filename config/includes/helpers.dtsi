@@ -157,20 +157,24 @@
         then-layer = THEN_LAYERS; \
     )
 
-#define MACRO_BRACKET_PAIR(name, OPEN_KEY, CLOSE_KEY) \
+#define MACRO_NO_PARAM(name, ...) \
     ZMK_MACRO_NO_PARAM(name, \
-        bindings = <&kp OPEN_KEY &kp CLOSE_KEY &kp LEFT>; \
+        bindings = __VA_ARGS__; \
     )
+
+#define MACRO_ONE_PARAM(name, ...) \
+    ZMK_MACRO_ONE_PARAM(name, \
+        bindings = <&macro_param_1to1>, __VA_ARGS__; \
+    )
+
+#define MACRO_BRACKET_PAIR(name, OPEN_KEY, CLOSE_KEY) \
+    MACRO_NO_PARAM(name, <&kp OPEN_KEY &kp CLOSE_KEY &kp LEFT>)
 
 #define MACRO_ARROW_R(name, SYMBOL_KEY) \
-    ZMK_MACRO_NO_PARAM(name, \
-        bindings = <&kp SYMBOL_KEY &kp GREATER_THAN &kp SPACE>; \
-    )
+    MACRO_NO_PARAM(name, <&kp SYMBOL_KEY &kp GREATER_THAN &kp SPACE>)
 
 #define MACRO_ARROW_L(name, SYMBOL_KEY) \
-    ZMK_MACRO_NO_PARAM(name, \
-        bindings = <&kp LESS_THAN &kp SYMBOL_KEY &kp SPACE>; \
-    )
+    MACRO_NO_PARAM(name, <&kp LESS_THAN &kp SYMBOL_KEY &kp SPACE>)
 
 // ZMKCFG_HELPERS_DTSI
 #endif

@@ -8,9 +8,7 @@
         m_chevrons:  MACRO_BRACKET_PAIR(macro_angle_brackets, LESS_THAN,        GREATER_THAN)
         m_backticks: MACRO_BRACKET_PAIR(macro_backticks,      GRAVE,            GRAVE)
 
-        m_triple_backticks: ZMK_MACRO_NO_PARAM(macro_triple_backticks,
-            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
-        )
+        m_triple_backticks: MACRO_NO_PARAM(macro_triple_backticks, <&kp GRAVE &kp GRAVE &kp GRAVE>)
 
         m_arrow_r:       MACRO_ARROW_R(macro_arrow_right,       MINUS)
         m_arrow_l:       MACRO_ARROW_L(macro_arrow_left,        MINUS)
@@ -26,42 +24,17 @@
 
         // -- Elixir -----------------------------------------------------------
 
-        m_ex_bitstring: ZMK_MACRO_NO_PARAM(macro_elixir_bitstring,
-            bindings = <&kp LESS_THAN &kp LESS_THAN &kp GREATER_THAN &kp GREATER_THAN &kp LEFT &kp LEFT>;
-        )
-
-        m_ex_type_delim: ZMK_MACRO_NO_PARAM(macro_elixir_type_delimiter,
-            bindings = <&kp COLON &kp COLON &kp SPACE>;
-        )
-
-        m_ex_spec: ZMK_MACRO_NO_PARAM(macro_elixir_spec,
-            bindings = <&kp AT_SIGN &kp S &kp P &kp E &kp C &kp SPACE>;
-        )
-
-        m_ex_type: ZMK_MACRO_NO_PARAM(macro_elixir_type,
-            bindings = <&kp AT_SIGN &kp T &kp Y &kp P &kp E &kp SPACE>;
-        )
-
-        m_ex_map: ZMK_MACRO_NO_PARAM(macro_elixir_map,
-            bindings = <&kp PERCENT &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
-        )
-
-        m_ex_interp: ZMK_MACRO_NO_PARAM(macro_elixir_interpolation,
-            bindings = <&kp HASH &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
-        )
-
-        m_ex_full_interp: ZMK_MACRO_NO_PARAM(macro_elixir_full_interpolation,
-            bindings = <&kp DOUBLE_QUOTES &kp HASH &kp LEFT_BRACE &kp RIGHT_BRACE &kp DOUBLE_QUOTES &kp LEFT &kp LEFT>;
-        )
+        m_ex_bitstring:   MACRO_NO_PARAM(macro_elixir_bitstring,          <&kp LESS_THAN &kp LESS_THAN &kp GREATER_THAN &kp GREATER_THAN &kp LEFT &kp LEFT>)
+        m_ex_type_delim:  MACRO_NO_PARAM(macro_elixir_type_delimiter,     <&kp COLON &kp COLON &kp SPACE>)
+        m_ex_spec:        MACRO_NO_PARAM(macro_elixir_spec,               <&kp AT_SIGN &kp S &kp P &kp E &kp C &kp SPACE>)
+        m_ex_type:        MACRO_NO_PARAM(macro_elixir_type,               <&kp AT_SIGN &kp T &kp Y &kp P &kp E &kp SPACE>)
+        m_ex_map:         MACRO_NO_PARAM(macro_elixir_map,                <&kp PERCENT &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>)
+        m_ex_interp:      MACRO_NO_PARAM(macro_elixir_interpolation,      <&kp HASH &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>)
+        m_ex_full_interp: MACRO_NO_PARAM(macro_elixir_full_interpolation, <&kp DOUBLE_QUOTES &kp HASH &kp LEFT_BRACE &kp RIGHT_BRACE &kp DOUBLE_QUOTES &kp LEFT &kp LEFT>)
 
         // -- Game -------------------------------------------------------------
 
-        m_tap_gchat_o: ZMK_MACRO_ONE_PARAM(macro_tap_game_chat_open,
-            bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER &to GAME_CHAT>;
-        )
-
-        m_tap_gchat_c: ZMK_MACRO_ONE_PARAM(macro_tap_game_chat_close,
-            bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER &to GAME>;
-        )
+        m_tap_gchat_o: MACRO_ONE_PARAM(macro_tap_game_chat_open,  <&kp MACRO_PLACEHOLDER &to GAME_CHAT>)
+        m_tap_gchat_c: MACRO_ONE_PARAM(macro_tap_game_chat_close, <&kp MACRO_PLACEHOLDER &to GAME>)
     };
 };
