@@ -9,9 +9,7 @@
             <&macro_release &mo NAVIGATION>
         )
 
-        thumb_nav_tap: HOLD_TAP(thumb_nav_tap, <&base_nav>, <&kp>,
-            quick-tap-ms = <QUICK_TAP_MS>;
-        )
+        thumb_nav_tap: QUICK_HOLD_TAP(thumb_nav_tap, <&base_nav>, <&kp>)
 
         alt_tab_latch: MACRO_NO_PARAM(alt_tab_latch,
             <&macro_press &kp RALT>,

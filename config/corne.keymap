@@ -14,9 +14,11 @@
 
 #include "fragments/macros.dtsi"
 #include "fragments/behaviors.dtsi"
-#include "fragments/nav_tab.dtsi"
 #include "fragments/combos.dtsi"
 #include "fragments/conditional_layers.dtsi"
+
+#include "features/nav_tab.dtsi"
+#include "features/game_chat.dtsi"
 
 /*  Keymap template
         // -- Template layer -----------------------------------------------------------------
@@ -55,7 +57,7 @@
             &trans                   &trans                   &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &trans                   &trans
             &trans                   &trans                   &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &trans                   &trans
             &trans                   &trans                   &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &trans                   &to GAME
-                                                                                       &m_tap_gchat_c ESCAPE    &trans                   &trans                          &m_tap_gchat_c RETURN    &trans                   &m_tap_gchat_c ESCAPE
+                                                                                       &gchat NAVIGATION ESCAPE &trans                   &trans                          &gchat ALTER RETURN      &trans                   &gchat MEDIA ESCAPE
         >)
 
         // -- Base Plain layer ---------------------------------------------------------------
@@ -115,7 +117,7 @@
             &trans                   &trans                   &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &trans                   &trans
             &kp LEFT_SHIFT           &trans                   &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &trans                   &trans
             &kp LEFT_CONTROL         &trans                   &trans                   &trans                   &trans                   &trans                          &trans                   &trans                   &trans                   &trans                   &trans                   &to GAME_CHAT
-                                                                                       &thumb GAME_UTILS ESCAPE &trans                   &trans                          &m_tap_gchat_o RETURN    &trans                   &kp ESCAPE
+                                                                                       &thumb GAME_UTILS ESCAPE &trans                   &trans                          &gchat_o RETURN          &trans                   &kp ESCAPE
         >)
 
         // -- Game Utils layer ---------------------------------------------------------------

@@ -31,10 +31,5 @@
         m_ex_map:         MACRO_NO_PARAM(macro_elixir_map,                <&kp PERCENT &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>)
         m_ex_interp:      MACRO_NO_PARAM(macro_elixir_interpolation,      <&kp HASH &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>)
         m_ex_full_interp: MACRO_NO_PARAM(macro_elixir_full_interpolation, <&kp DOUBLE_QUOTES &kp HASH &kp LEFT_BRACE &kp RIGHT_BRACE &kp DOUBLE_QUOTES &kp LEFT &kp LEFT>)
-
-        // -- Game -------------------------------------------------------------
-
-        m_tap_gchat_o: MACRO_ONE_PARAM(macro_tap_game_chat_open,  <&kp MACRO_PLACEHOLDER &to GAME_CHAT>)
-        m_tap_gchat_c: MACRO_ONE_PARAM(macro_tap_game_chat_close, <&kp MACRO_PLACEHOLDER &to GAME>)
     };
 };
