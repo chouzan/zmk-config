@@ -5,6 +5,6 @@
         gchat_o: MACRO_ONE_PARAM(game_chat_open,  <&kp MACRO_PLACEHOLDER &to GAME_CHAT>)
         gchat_c: MACRO_ONE_PARAM(game_chat_close, <&kp MACRO_PLACEHOLDER &to GAME>)
 
-        gchat: QUICK_HOLD_TAP(game_chat, <&mo>, <&gchat_c>)
+        gchat: HOLD_TAP_QUICK_TAP(game_chat, <&mo>, <&gchat_c>)
     };
 };

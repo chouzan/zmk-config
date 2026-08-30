@@ -88,7 +88,7 @@
         __VA_ARGS__ \
     )
 
-#define QUICK_HOLD_TAP(name, HOLD, TAP) \
+#define HOLD_TAP_QUICK_TAP(name, HOLD, TAP) \
     HOLD_TAP(name, HOLD, TAP, \
         quick-tap-ms = <QUICK_TAP_MS>; \
     )
@@ -120,9 +120,6 @@
 
 #define HRM_LITTLE(name, ENABLED_SIDE) \
     HRM(name, LITTLE_HOLD_MS, LITTLE_PRIOR_IDLE_MS, LITTLE_QUICK_TAP_MS, ENABLED_SIDE)
-
-#define THUMB(name) \
-    QUICK_HOLD_TAP(name, <&mo>, <&kp>)
 
 #define MOD_MORPH(name, TAP, MORPHED_TAP, MODS, ...) \
     ZMK_MOD_MORPH(name, \

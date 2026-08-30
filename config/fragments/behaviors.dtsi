@@ -1,25 +1,38 @@
+// Behaviors built from the ZMK defaults, each used across several layers. A
+// behavior with machinery of its own belongs under features/.
+//
+// Label: the ZMK behavior it extends, abbreviated, matching upstream's label
+// where there is one, or the domain name. Node: what the label stands for.
+
 / {
     behaviors {
         // -- Custom hold-tap --------------------------------------------------
+        //
+        // lt_d applies the defaults only; lt_qt adds a quick-tap window.
+        //
+        // ht_tr holds &trans to fall through to the layer below. A &trans
+        // binding inside a hold-tap resolves to nothing, so the hold is inert
+        // for now. Tracked as zmkfirmware/zmk#2368.
 
-        tt:    HOLD_TAP(trans_tap,    <&trans>, <&kp>)
+        ht_tr: HOLD_TAP(hold_tap_trans, <&trans>, <&kp>)
 
-        c_lt:  HOLD_TAP(custom_lt,    <&mo>,    <&kp>)
-        lt_cw: HOLD_TAP(lt_caps_word, <&mo>,    <&caps_word>)
+        lt_d:  HOLD_TAP(layer_tap_default,             <&mo>, <&kp>)
+        lt_cw: HOLD_TAP(layer_tap_caps_word,           <&mo>, <&caps_word>)
+        lt_qt: HOLD_TAP_QUICK_TAP(layer_tap_quick_tap, <&mo>, <&kp>)
 
         // -- Custom mod-morph -------------------------------------------------
 
-        mm_arrows:       SHIFT_MORPH(mm_arrows,       <&m_arrow_r>,       <&m_arrow_l>)
-        mm_fat_arrows:   SHIFT_MORPH(mm_fat_arrows,   <&m_fat_arrow_r>,   <&m_fat_arrow_l>)
-        mm_tilde_arrows: SHIFT_MORPH(mm_tilde_arrows, <&m_tilde_arrow_r>, <&m_tilde_arrow_l>)
-        mm_pipes:        SHIFT_MORPH(mm_pipes,        <&m_pipe_r>,        <&m_pipe_l>)
-        mm_chevrons:     SHIFT_MORPH(mm_chevrons,     <&m_ex_bitstring>,  <&m_chevrons>)
-        mm_backticks:    SHIFT_MORPH(mm_backticks,    <&m_backticks>,     <&m_triple_backticks>)
-        mm_ex_specs:     SHIFT_MORPH(mm_elixir_specs, <&m_ex_spec>,       <&m_ex_type>)
+        mm_arrows:       SHIFT_MORPH(mod_morph_arrows,       <&m_arrow_r>,       <&m_arrow_l>)
+        mm_fat_arrows:   SHIFT_MORPH(mod_morph_fat_arrows,   <&m_fat_arrow_r>,   <&m_fat_arrow_l>)
+        mm_tilde_arrows: SHIFT_MORPH(mod_morph_tilde_arrows, <&m_tilde_arrow_r>, <&m_tilde_arrow_l>)
+        mm_pipes:        SHIFT_MORPH(mod_morph_pipes,        <&m_pipe_r>,        <&m_pipe_l>)
+        mm_chevrons:     SHIFT_MORPH(mod_morph_chevrons,     <&m_ex_bitstring>,  <&m_chevrons>)
+        mm_backticks:    SHIFT_MORPH(mod_morph_backticks,    <&m_backticks>,     <&m_triple_backticks>)
+        mm_ex_specs:     SHIFT_MORPH(mod_morph_elixir_specs, <&m_ex_spec>,       <&m_ex_type>)
 
         // -- Custom sticky key ------------------------------------------------
 
-        sk_qr: STICKY_KEY_QUICK_RELEASE(sk_quick_release, <&kp>)
+        sk_qr: STICKY_KEY_QUICK_RELEASE(sticky_key_quick_release, <&kp>)
 
         // -- Home row mod -----------------------------------------------------
 
@@ -32,9 +45,5 @@
         hrm_lm: HRM_MIDDLE(hrm_left_middle,  RIGHT_HAND)
         hrm_lr: HRM_RING(hrm_left_ring,      RIGHT_HAND)
         hrm_ll: HRM_LITTLE(hrm_left_little,  RIGHT_HAND)
-
-        // -- Thumb ------------------------------------------------------------
-
-        thumb: THUMB(thumb)
     };
 };
