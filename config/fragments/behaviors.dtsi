@@ -4,6 +4,13 @@
 // Label: the ZMK behavior it extends, abbreviated, matching upstream's label
 // where there is one, or the domain name. Node: what the label stands for.
 
+// -- Bindings -----------------------------------------------------------------
+
+// Supply the parameters for a hold-tap whose binding ignores one of them.
+
+#define HT_TR(KEY)   NA KEY
+#define LT_CW(LAYER) LAYER NA
+
 / {
     behaviors {
         // -- Custom hold-tap --------------------------------------------------

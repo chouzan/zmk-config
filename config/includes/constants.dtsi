@@ -112,6 +112,13 @@
 #define KEY_SYSTEM   17
 #define SANDBOX      18
 
+// -- Placeholder --------------------------------------------------------------
+
+// Stands in for a parameter that a behavior ignores. A bare 0 there would
+// read as a layer or a keycode.
+
+#define NA 0
+
 // -- Timing -------------------------------------------------------------------
 
 #define PRIOR_IDLE_MS     175

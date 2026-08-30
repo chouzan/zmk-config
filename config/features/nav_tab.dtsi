@@ -1,3 +1,9 @@
+// -- Bindings -----------------------------------------------------------------
+
+// Supply the parameters for a hold-tap whose binding ignores one of them.
+
+#define NAV_QT(KEY) NA KEY
+
 / {
     behaviors {
         // -- Nav tab switching ------------------------------------------------
@@ -9,7 +15,7 @@
             <&macro_release &mo NAVIGATION>
         )
 
-        thumb_nav_tap: HOLD_TAP_QUICK_TAP(thumb_nav_tap, <&base_nav>, <&kp>)
+        nav_qt: HOLD_TAP_QUICK_TAP(nav_quick_tap, <&base_nav>, <&kp>)
 
         alt_tab_latch: MACRO_NO_PARAM(alt_tab_latch,
             <&macro_press &kp RALT>,
