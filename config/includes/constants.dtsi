@@ -114,27 +114,11 @@
 
 // -- Timing -------------------------------------------------------------------
 
-#define PRIOR_IDLE_MS         175
-#define HOLD_MS               275
-#define QUICK_TAP_MS          175
-#define COMBO_TIMEOUT_MS       51
-#define RELEASE_AFTER_MS     1175
-
-#define INDEX_PRIOR_IDLE_MS    91
-#define INDEX_HOLD_MS         185
-#define INDEX_QUICK_TAP_MS   QUICK_TAP_MS
-
-#define MIDDLE_PRIOR_IDLE_MS PRIOR_IDLE_MS
-#define MIDDLE_HOLD_MS       HOLD_MS
-#define MIDDLE_QUICK_TAP_MS  QUICK_TAP_MS
-
-#define RING_PRIOR_IDLE_MS   PRIOR_IDLE_MS
-#define RING_HOLD_MS         HOLD_MS
-#define RING_QUICK_TAP_MS    QUICK_TAP_MS
-
-#define LITTLE_PRIOR_IDLE_MS PRIOR_IDLE_MS
-#define LITTLE_HOLD_MS       HOLD_MS
-#define LITTLE_QUICK_TAP_MS  QUICK_TAP_MS
+#define PRIOR_IDLE_MS     175
+#define HOLD_MS           275
+#define QUICK_TAP_MS      175
+#define COMBO_TIMEOUT_MS   51
+#define RELEASE_AFTER_MS 1175
 
 // ZMKCFG_CONSTANTS_DTSI
 #endif

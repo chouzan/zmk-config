@@ -1,0 +1,63 @@
+// -- Timing -------------------------------------------------------------------
+
+#define INDEX_PRIOR_IDLE_MS   91
+#define INDEX_HOLD_MS        185
+#define INDEX_QUICK_TAP_MS   QUICK_TAP_MS
+
+#define MIDDLE_PRIOR_IDLE_MS PRIOR_IDLE_MS
+#define MIDDLE_HOLD_MS       HOLD_MS
+#define MIDDLE_QUICK_TAP_MS  QUICK_TAP_MS
+
+#define RING_PRIOR_IDLE_MS   PRIOR_IDLE_MS
+#define RING_HOLD_MS         HOLD_MS
+#define RING_QUICK_TAP_MS    QUICK_TAP_MS
+
+#define LITTLE_PRIOR_IDLE_MS PRIOR_IDLE_MS
+#define LITTLE_HOLD_MS       HOLD_MS
+#define LITTLE_QUICK_TAP_MS  QUICK_TAP_MS
+
+// -- Helpers ------------------------------------------------------------------
+
+#define HOME_ROW_MOD(name, ...) \
+    ZMK_HOLD_TAP(name, \
+        bindings = <&kp>, <&kp>; \
+        flavor = "balanced"; \
+        hold-trigger-on-release; \
+        __VA_ARGS__ \
+    )
+
+#define HRM(name, HOLD, PRIOR_IDLE, QUICK_TAP, ENABLED_SIDE) \
+    HOME_ROW_MOD(name, \
+        tapping-term-ms = <HOLD>; \
+        require-prior-idle-ms = <PRIOR_IDLE>; \
+        quick-tap-ms = <QUICK_TAP>; \
+        hold-trigger-key-positions = <ENABLED_SIDE>; \
+    )
+
+#define HRM_INDEX(name, ENABLED_SIDE) \
+    HRM(name, INDEX_HOLD_MS, INDEX_PRIOR_IDLE_MS, INDEX_QUICK_TAP_MS, ENABLED_SIDE)
+
+#define HRM_MIDDLE(name, ENABLED_SIDE) \
+    HRM(name, MIDDLE_HOLD_MS, MIDDLE_PRIOR_IDLE_MS, MIDDLE_QUICK_TAP_MS, ENABLED_SIDE)
+
+#define HRM_RING(name, ENABLED_SIDE) \
+    HRM(name, RING_HOLD_MS, RING_PRIOR_IDLE_MS, RING_QUICK_TAP_MS, ENABLED_SIDE)
+
+#define HRM_LITTLE(name, ENABLED_SIDE) \
+    HRM(name, LITTLE_HOLD_MS, LITTLE_PRIOR_IDLE_MS, LITTLE_QUICK_TAP_MS, ENABLED_SIDE)
+
+/ {
+    behaviors {
+        // -- Home row mods ----------------------------------------------------
+
+        hrm_ri: HRM_INDEX(hrm_right_index,   LEFT_HAND)
+        hrm_rm: HRM_MIDDLE(hrm_right_middle, LEFT_HAND)
+        hrm_rr: HRM_RING(hrm_right_ring,     LEFT_HAND)
+        hrm_rl: HRM_LITTLE(hrm_right_little, LEFT_HAND)
+
+        hrm_li: HRM_INDEX(hrm_left_index,    RIGHT_HAND)
+        hrm_lm: HRM_MIDDLE(hrm_left_middle,  RIGHT_HAND)
+        hrm_lr: HRM_RING(hrm_left_ring,      RIGHT_HAND)
+        hrm_ll: HRM_LITTLE(hrm_left_little,  RIGHT_HAND)
+    };
+};

@@ -33,17 +33,5 @@
         // -- Custom sticky key ------------------------------------------------
 
         sk_qr: STICKY_KEY_QUICK_RELEASE(sticky_key_quick_release, <&kp>)
-
-        // -- Home row mod -----------------------------------------------------
-
-        hrm_ri: HRM_INDEX(hrm_right_index,   LEFT_HAND)
-        hrm_rm: HRM_MIDDLE(hrm_right_middle, LEFT_HAND)
-        hrm_rr: HRM_RING(hrm_right_ring,     LEFT_HAND)
-        hrm_rl: HRM_LITTLE(hrm_right_little, LEFT_HAND)
-
-        hrm_li: HRM_INDEX(hrm_left_index,    RIGHT_HAND)
-        hrm_lm: HRM_MIDDLE(hrm_left_middle,  RIGHT_HAND)
-        hrm_lr: HRM_RING(hrm_left_ring,      RIGHT_HAND)
-        hrm_ll: HRM_LITTLE(hrm_left_little,  RIGHT_HAND)
     };
 };

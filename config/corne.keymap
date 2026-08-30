@@ -17,6 +17,7 @@
 #include "fragments/combos.dtsi"
 #include "fragments/conditional_layers.dtsi"
 
+#include "features/home_row_mods.dtsi"
 #include "features/nav_tab.dtsi"
 #include "features/game_chat.dtsi"
 
